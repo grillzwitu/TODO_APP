@@ -128,6 +128,5 @@ STATICFILES_DIRS = ['static']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Heroku settings. 
-
+# Heroku settings.
 django_heroku.settings(locals())
