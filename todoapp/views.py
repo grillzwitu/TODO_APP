@@ -54,13 +54,12 @@ def delete_task(request):
 def edit_task(request):
     """Edits A Task"""
 
-    get_task = request.POST.get('task_to_be_edited')
-    print(get_task)
-    the_id = request.POST.get('the_edit')
-    the_edited_item = Task.objects.get(id=the_id)
-    the_edited_item.name = get_task
-    the_edited_item.save()
-
-
+    if request.method == "POST":
+        get_task = request.POST.get('task_to_be_edited')
+        print(get_task)
+        the_id = request.POST.get('the_edit')
+        the_edited_item = Task.objects.get(id=the_id)
+        the_edited_item.name = get_task
+        the_edited_item.save()
 
     return redirect('user')
